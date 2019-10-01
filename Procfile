@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath app rd.app:app
