@@ -10,14 +10,14 @@ class Tokener:
         self.appid = os.environ.get('TEST_MY_REST_RD_APP_ID')
         self.appsecret = os.environ.get('TEST_MY_REST_RD_APP_SECRET')
 
-        self.base_url = 'https://www.reddit.com'
+        self.base_url = 'https://www.reddit.com/'
 
         self.data = {'grant_type': 'password', 'username': self.username, 'password': self.password}
 
         self.auth = requests.auth.HTTPBasicAuth(self.appid, self.appsecret)
 
         self.r = requests.post(
-            self.base_url + 'api/v1/access_token',
+            self.base_url + '/api/v1/access_token',
             data = self.data,
             headers = {'user-agent': 'test-my-rest by thirstyfountain'},
             auth = self.auth
