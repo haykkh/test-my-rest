@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath app rd.app:app
+web: gunicorn --pythonpath app reddit.app:app
