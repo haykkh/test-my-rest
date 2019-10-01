@@ -1,9 +1,10 @@
 import requests
 import time
+from reddit.tokener import Tokener
 
 reddit = 'https://oauth.reddit.com/'
 
-token = 'bearer ' + tokener
+token = 'bearer ' + Tokener().getToken()
 
 headers = {'Authorization': token, 'User-Agent': 'test-my-rest by thirstyfountain'}
 

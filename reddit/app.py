@@ -1,4 +1,5 @@
 from flask import Flask
+from reddit.user import User
 
 app = Flask(__name__)
 
@@ -8,7 +9,8 @@ def api_root():
 
 @app.route('/reddit/<username>')
 def api_user(username):
-    pass
+    user = User(username)
+    return 'Reddit user ' + username + ' was created on: ' + user.getCreationDate()
 
 if __name__ == "__maine__":
     app.run()
